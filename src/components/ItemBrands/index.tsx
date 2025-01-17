@@ -2,7 +2,7 @@ import { ArrowRight, Button, Container, ContainerIcon, Content, Icon, Title } fr
 
 interface ItemBrandsProps {
   title: string;
-  onPress: () => void;  
+  onPress?: () => void;  
 }
 
 export function ItemBrands({ title, onPress }: ItemBrandsProps) { 

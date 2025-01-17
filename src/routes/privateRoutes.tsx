@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from '../screens/Home';
+import { Models } from '../screens/Models';
 
 
 export function PrivateRoutes() {
@@ -10,6 +11,10 @@ export function PrivateRoutes() {
             <Screen
                 name='home'
                 component={Home}
+            />
+             <Screen
+                name='models'
+                component={Models}
             />
      
         </Navigator>

@@ -37,7 +37,7 @@ export function Home() {
           data={brands}
           keyExtractor={(item) => item.codigo}
           renderItem={({ item }) => (
-            <ItemBrands title={item.nome} onPress={() => navigation.navigate('Model', { brandId: item.codigo })} />
+            <ItemBrands title={item.nome} onPress={() => navigation.navigate('models', { brandId: item.codigo })} />
           )}
         />
       </Container>
