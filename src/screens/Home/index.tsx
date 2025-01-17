@@ -25,7 +25,7 @@ export function Home() {
   }, []);
 
   return (
-    <DefaultContainer title='Home'>
+    <DefaultContainer title='Home' showButtonSignOut>
       <Container>
         <Title>
           Bem vindo,

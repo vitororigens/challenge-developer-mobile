@@ -1,4 +1,5 @@
 import { ActivityIndicator, TouchableOpacity } from "react-native";
+import { DefaultTheme } from "styled-components";
 import styled from "styled-components/native";
 
 export type ButtonTypeProps = 'PRIMARY' | 'SECUNDARY';
@@ -20,11 +21,11 @@ export const Container = styled(TouchableOpacity)<Props>`
 `;
 
 export const Title = styled.Text`
-    font-size: ${({theme}) => theme.FONTE_SIZE.GG}px;
-    font-family: ${({theme}) => theme.FONT_FAMILY.BOLD};
-    color: ${({theme}) =>  theme.COLORS.WHITE };
+    font-size: ${({theme}: {theme: DefaultTheme}) => theme.FONTE_SIZE.GG}px;
+    font-family: ${({theme}: {theme: DefaultTheme}) => theme.FONT_FAMILY.BOLD};
+    color: ${({theme}: {theme: DefaultTheme}) =>  theme.COLORS.WHITE };
 `;
 
-export const Loading = styled(ActivityIndicator).attrs(({theme}) => ({
+export const Loading = styled(ActivityIndicator).attrs(({theme}: {theme: DefaultTheme}) => ({
     color: theme.COLORS.WHITE
 }) )``

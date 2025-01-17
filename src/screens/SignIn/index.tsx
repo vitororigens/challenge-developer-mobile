@@ -12,6 +12,7 @@ import { z } from "zod";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { Text } from "react-native";
+import { useToast } from 'react-native-toast-notifications';  
 
 const formSchema = z.object({
   user: z.string().min(1, "Nome do usuário é obrigatorio"),
@@ -24,6 +25,7 @@ export function SignIn() {
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
   const { signIn } = useContext(AuthContext);
+  const toast = useToast(); 
 
   const { control, handleSubmit, reset, formState: { errors } } = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
@@ -39,6 +41,10 @@ export function SignIn() {
       await signIn(data);
     } catch (error) {
       console.error("Erro ao fazer login:", error);
+      toast.show("Usuário e/ou senha inválido(s).", { 
+        type: "danger",  
+        duration: 4000,  
+      });
     } finally {
       setIsLoading(false);
     }

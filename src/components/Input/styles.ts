@@ -16,7 +16,7 @@ export const Container = styled.View<Props>`
     min-height: 50px;
     max-height: 50px;
     padding: 16px;
-    background-color: ${({ theme }) => theme.COLORS.GRAY_300};
+    background-color: ${({ theme }) => theme.COLORS.WHITE};
     margin-bottom: 5px;
     width: 100%;
     border-top-left-radius: ${({ type }) => type === 'PRIMARY'  ? '8px' : 0};

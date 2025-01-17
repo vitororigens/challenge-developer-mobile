@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { Button, Container, Content, ContentHeader, Icon, Title } from "./styles";
+import { AuthContext } from "../../contexts/authContext";
+import { useNavigation } from "@react-navigation/native";
 
 type PropsDefaultContainer = {
     children?: React.ReactNode;
@@ -8,23 +11,27 @@ type PropsDefaultContainer = {
 }
 
 export function DefaultContainer({ children, showButtonBack, showButtonSignOut, title }: PropsDefaultContainer) {
+      const { signOut } = useContext(AuthContext);
+      const navigation = useNavigation()
+
+      const goBack = () =>  {
+        navigation.goBack()
+      }
     return (
         <Container>
             <ContentHeader>
-                <Title>
-                    {title}
-                </Title>
-
-                {showButtonBack &&
-                    <Button>
+            {showButtonBack &&
+                    <Button onPress={goBack}>
                         <Icon
                             name='arrow-left'
                         />
                     </Button>
                 }
-
+                <Title>
+                    {title}
+                </Title>
                 {showButtonSignOut &&
-                    <Button>
+                    <Button  onPress={signOut}>
                         <Icon
                             name="sign-out"
                         />

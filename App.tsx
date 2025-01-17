@@ -7,6 +7,7 @@ import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import { ActivityIndicator } from 'react-native';
+import { ToastProvider } from 'react-native-toast-notifications';
 
 export default function App() {
   const [fontLoader] = useFonts({
@@ -17,12 +18,14 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <AuthProvider>
-          {fontLoader ? <Routes /> : <ActivityIndicator />}
-          <StatusBar style="auto" />
-        </AuthProvider>
-      </NavigationContainer>
+      <ToastProvider>
+        <NavigationContainer>
+          <AuthProvider>
+            {fontLoader ? <Routes /> : <ActivityIndicator />}
+            <StatusBar style="auto" />
+          </AuthProvider>
+        </NavigationContainer>
+      </ToastProvider>
     </ThemeProvider>
   );
 }
