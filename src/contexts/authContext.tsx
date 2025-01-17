@@ -13,7 +13,9 @@ interface SigninData {
 
 interface AuthData {
   id: string;
-  user: string;
+  user: {
+    name: string;
+  };
 }
 
 export interface AuthContextDataProps {

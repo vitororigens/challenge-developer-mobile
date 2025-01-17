@@ -1,14 +1,12 @@
 import styled from "styled-components/native";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { TouchableOpacity } from "react-native";
 import { DefaultTheme } from "styled-components";
 
-export const Container = styled(TouchableOpacity)`
+export const Container = styled.View`
     flex: 1;
     height: 60px;
     border-bottom-width: 2px;
-    border-bottom-color: ${({ theme }) => theme.COLORS.GRAY_400}; 
+    border-bottom-color: ${({ theme }: { theme: DefaultTheme }) => theme.COLORS.GRAY_400}; 
     border-bottom-style: solid; 
     flex-direction: row;
     align-items: center;
@@ -19,7 +17,7 @@ export const ContainerIcon = styled.View`
     height: 45px;
     width: 45px;
     border-radius: 100px;
-   background-color: ${({ theme }) => theme.COLORS.GRAY_300};
+   background-color: ${({ theme }: { theme: DefaultTheme })  => theme.COLORS.GRAY_300};
    align-items: center;
    justify-content: center;
 `;
@@ -36,11 +34,6 @@ export const Title = styled.Text`
     
 `;
 
-
-export const ArrowRight = styled(MaterialIcons).attrs(({theme}: {theme: DefaultTheme}) => ({
-    color: theme.COLORS.GRAY_600,
-    size: theme.FONTE_SIZE.XL
-}))``;
 
 export const Content = styled.View`
     flex: 1;

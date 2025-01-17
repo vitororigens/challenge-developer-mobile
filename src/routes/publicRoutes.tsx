@@ -9,7 +9,7 @@ export function PublicRoutes() {
     return (
         <Navigator screenOptions={{ headerShown: false}}>
             <Screen
-                name='Signin'
+                name='signin'
                 component={SignIn}
             />
      

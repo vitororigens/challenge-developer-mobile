@@ -1,4 +1,4 @@
-import { ArrowRight, Button, Container, ContainerIcon, Content, Icon, Title } from "./styles";
+import { ArrowRight, Container, ContainerIcon, Content, Icon, Title } from "./styles";
 
 interface ItemBrandsProps {
   title: string;
@@ -7,7 +7,7 @@ interface ItemBrandsProps {
 
 export function ItemBrands({ title, onPress }: ItemBrandsProps) { 
   return (
-    <Container>
+    <Container onPress={onPress}>
       <Content>
         <ContainerIcon>
           <Icon name="car" />
@@ -16,9 +16,7 @@ export function ItemBrands({ title, onPress }: ItemBrandsProps) {
           {title}
         </Title>
       </Content>
-      <Button onPress={onPress}>  
         <ArrowRight name="keyboard-arrow-right" />
-      </Button>
     </Container>
   );
 }

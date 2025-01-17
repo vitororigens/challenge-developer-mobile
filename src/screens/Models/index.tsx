@@ -1,10 +1,10 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { DefaultContainer } from '../../components/DefaultContainer';
-import { Container, SubTitle, Title } from './styles';
+import { Container} from './styles';
 import axios from 'axios';
 import { FlatList } from 'react-native';
-import { ItemBrands } from '../../components/ItemBrands';
 import { useRoute } from '@react-navigation/native';
+import { ItemModels } from '../../components/ItemModels';
 
 interface Model {
   codigo: string;
@@ -29,7 +29,7 @@ export function Models() {
           data={models}
           keyExtractor={(item) => item.codigo}
           renderItem={({ item }) => (
-            <ItemBrands title={item.nome} />
+            <ItemModels title={item.nome} />
           )}
         />
       </Container>
