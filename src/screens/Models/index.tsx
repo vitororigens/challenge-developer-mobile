@@ -11,7 +11,6 @@ interface Model {
   nome: string;
 }
 
-
 export function Models() {
   const route = useRoute();
   const { brandId } = route.params as { brandId?: string };
