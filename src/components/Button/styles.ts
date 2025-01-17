@@ -11,11 +11,12 @@ export const Container = styled(TouchableOpacity)<Props>`
     min-height: 50px;
     max-height: 50px;
     width: 100%;
-    border-radius: 30px;
+    border-radius: 8px;
     background: ${({theme, type}) => type === 'PRIMARY' ? theme.COLORS.PURPLE_600  : theme.COLORS.PINK_700};
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    margin-top: 20px;
 `;
 
 export const Title = styled.Text`

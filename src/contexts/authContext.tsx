@@ -7,18 +7,18 @@ interface AuthProviderProps {
 }
 
 interface SigninData {
-  email: string;
+  user: string;
   password: string;
 }
 
 interface AuthData {
   id: string;
-  email: string;
+  user: string;
 }
 
 export interface AuthContextDataProps {
   user: AuthData | null;
-  signin: (data: SigninData) => Promise<void>;
+  signIn: (data: SigninData) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
@@ -58,7 +58,7 @@ function AuthProvider({ children }: AuthProviderProps) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, signin: signIn, signOut }}>
+    <AuthContext.Provider value={{ user, signIn: signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );

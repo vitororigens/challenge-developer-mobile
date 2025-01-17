@@ -18,8 +18,6 @@ export const ContentHeader = styled.View`
 
 export const Content = styled.View`
     flex: 1;
-    justify-content: center;
-    align-items: center;
 `;
 
 export const Title = styled.Text`
