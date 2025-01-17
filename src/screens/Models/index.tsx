@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DefaultContainer } from '../../components/DefaultContainer';
-import { Container} from './styles';
+import { Container } from './styles';
 import axios from 'axios';
 import { FlatList } from 'react-native';
 import { useRoute } from '@react-navigation/native';
@@ -11,9 +11,10 @@ interface Model {
   nome: string;
 }
 
+
 export function Models() {
   const route = useRoute();
-  const { brandId } = route.params;
+  const { brandId } = route.params as { brandId?: string };
   const [models, setModels] = useState<Model[]>([]);
 
   useEffect(() => {
@@ -22,8 +23,8 @@ export function Models() {
       .catch(error => console.error(error));
   }, [brandId]);
 
-  return ( 
-    <DefaultContainer title='Modelos'  showButtonBack>
+  return (
+    <DefaultContainer title='Modelos' showButtonBack>
       <Container>
         <FlatList
           data={models}
