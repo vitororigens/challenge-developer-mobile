@@ -1,10 +1,11 @@
-import { ArrowRight, Container, ContainerIcon, Content, Icon, Title } from "./styles";
+import { ArrowRight, Button, Container, ContainerIcon, Content, Icon, Title } from "./styles";
 
 interface ItemBrandsProps {
   title: string;
+  onPress: () => void;  
 }
 
-export function ItemBrands({ title }: ItemBrandsProps) { 
+export function ItemBrands({ title, onPress }: ItemBrandsProps) { 
   return (
     <Container>
       <Content>
@@ -15,7 +16,9 @@ export function ItemBrands({ title }: ItemBrandsProps) {
           {title}
         </Title>
       </Content>
-      <ArrowRight name="keyboard-arrow-right" />
+      <Button onPress={onPress}>  
+        <ArrowRight name="keyboard-arrow-right" />
+      </Button>
     </Container>
   );
 }
